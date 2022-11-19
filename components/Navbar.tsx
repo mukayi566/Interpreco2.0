@@ -22,7 +22,7 @@ const Navbar = () =>{
                 <Image
                   className="cursor-pointer"
                   src={Logo}
-                  alt="Tiktik"
+                  alt="interpreco"
                   layout="responsive"
                 />
             </div>
@@ -40,14 +40,14 @@ const Navbar = () =>{
                                <span className="hidden md:block"> Upload</span>
                             </button>
                         </Link>
-                        {userProfile && (
+                        {userProfile.image && (
                             <Link href="/">
                               <>
                                 <Image
                                 width={40}
                                 height={40}
                                 className="rounded-full cursor-pointer"
-                                src={userProfile}
+                                src={userProfile.image}
                                 alt="profile photo"
                                 />
                                 </>

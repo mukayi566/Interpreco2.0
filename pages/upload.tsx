@@ -7,6 +7,7 @@ import { SanityAssetDocument } from '@sanity/client'
 import useAuthStore from '../store/authStore'
 import { client } from '../utils/client'
 import { topics } from '../utils/constants'
+import { BASE_URL } from '../utils'
 
 const Upload = () => {
 
@@ -68,7 +69,7 @@ const Upload = () => {
                 topic: category
             }
 
-            await axios.post('http://localhost:3000/api/post', document);
+            await axios.post(`${BASE_URL}/api/post`, document);
 
             router.push('/');
         }
@@ -77,13 +78,13 @@ const Upload = () => {
 
     return (
         <div className='flex w-full h-full absolute left-0 top-[60px] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] justify-center'>
-            <div className='bg-white rounded-lg xl:h-[80vh] w-[60%] flex gap-6 flex-wrap justify-between items-center p-14 pt-6'>
+            <div className='bg-white rounded-lg xl:h-[80vh] w-[60pxnno] flex gap-6 flex-wrap justify-between items-center p-14 pt-6'>
                 <div>
                     <div>
                         <p className='text-2xl font-bold'>Upload video</p>
                         <p className='text-md text-gray-400 mt-1'>Post a video to your account</p>
                     </div>
-                    <div className='border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center outline-none mt-10 w-[260px] h-[460px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100'>
+                    <div className='border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center outline-none mt-10 w-[290px] h-[460px] p-10 cursor-pointer hover:border-blue-300 hover:bg-gray-100'>
                         {isLoading ? (
                             <p>Uploading...</p>
                         ) : (
