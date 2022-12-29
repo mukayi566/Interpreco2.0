@@ -156,8 +156,6 @@ const Detail = ({ postDetails }: IProps) => {
                         </div>
                     </Link>
                 </div>
-
-
                 <p className='px-10 text-lg text-gray-600'>
                     {post.caption}
                 </p>

@@ -4,10 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { AiOutlineLogout} from 'react-icons/ai';
-import { BiSearch } from 'react-icons/bi'
+import { BiCommentX, BiSearch } from 'react-icons/bi'
 import {IoMdAdd} from 'react-icons/io'
 
-import Logo from '../utils/tiktik-logo.png'
+import Logo from '../utils/inter-logo.png'
+import { MdOutlineVideocamOff } from "react-icons/md";
 
 
 interface IProps{
@@ -17,8 +18,14 @@ interface IProps{
 
 const NoResults = ({text}: IProps) =>{
     return (
-        <div>
-
+        <div className="flex flex-col justify-center items-center h-full w-full">
+            <p className="text-8xl">
+                {text === 'No Comment yet'
+                ? <BiCommentX/> 
+                : <MdOutlineVideocamOff/>
+                }
+            </p>
+            <p className="text-2xl text-center">{text}</p>
         </div>
     )
 }
